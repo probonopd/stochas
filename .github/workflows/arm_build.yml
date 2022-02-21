@@ -3,7 +3,7 @@ on: [push, pull_request]
 jobs:
   aarch64_job:
     # The host should always be Linux
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     name: Build on bullseye aarch64
     steps:
       - uses: actions/checkout@v2.1.0
@@ -64,8 +64,3 @@ jobs:
             cp -r build/stochas_artefacts/VST3/* build/Stochas
             cp -r build/stochas_artefacts/Standalone/* build/Stochas/Standalone      
             tar czf "build/product/${NM}" -C build Stochas
-
-      - name: Get the output
-        # Echo the `uname` output parameter from the `runcmd` step
-        run: |
-          echo "The uname output was ${{ steps.runcmd.outputs.uname }}"
