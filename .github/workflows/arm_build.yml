@@ -54,9 +54,13 @@ jobs:
             cmake -Bbuild -DSTOCHAS_VERSION=${SVER}
             cmake --build build --config Release
             LINARCH=`uname -m`
-            NM=stochas-${STOCHAS_VERSION}.${GH}-linux-${LINARCH}.tgz
+            NM=stochas-${SVER}.${GH}-linux-${LINARCH}.tgz
             mkdir -p build/product/
             mkdir -p build/Stochas/Standalone
             cp -r build/stochas_artefacts/VST3/* build/Stochas
             cp -r build/stochas_artefacts/Standalone/* build/Stochas/Standalone      
             tar czf "build/product/${NM}" -C build Stochas
+      - uses: actions/upload-artifact@v2
+        with:
+          name: my-artifact
+          path: build/product/*.tgz
