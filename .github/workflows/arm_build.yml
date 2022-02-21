@@ -30,7 +30,6 @@ jobs:
             libcurl4-openssl-dev \
             alsa-tools \
             libasound2-dev \
-            jack \
             libjack-dev \
             libfreetype6-dev \
             libxinerama-dev \
