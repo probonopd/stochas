@@ -19,7 +19,7 @@ jobs:
           githubToken: ${{ github.token }}
 
           # Set an output parameter `uname` for use in subsequent steps
-          bash: |
+          run: |
             set -ex
             uname -a
             echo ::set-output name=uname::$(uname -a)
