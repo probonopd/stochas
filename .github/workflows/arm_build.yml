@@ -58,6 +58,7 @@ jobs:
             mkdir -p build/product/
             mkdir -p build/Stochas/Standalone
             cp -r build/stochas_artefacts/VST3/* build/Stochas
+            mv build/Stochas/Stochas.vst3/Contents/arm64-linux build/Stochas/Stochas.vst3/Contents/aarch64-linux
             cp -r build/stochas_artefacts/Standalone/* build/Stochas/Standalone      
             tar czf "build/product/${NM}" -C build Stochas
       - uses: actions/upload-artifact@v2
